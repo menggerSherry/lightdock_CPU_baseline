@@ -2,12 +2,15 @@
 set -ex
 ################
 
-
+if [ -z $dock_base ]
+then
+    echo "not found envoriment variable : dock_base"
+fi
 
 declare -a stringArray
 stringArray=("2VXT" "3VLB" "2A1A" "3LVK" "2GTP" "2X9A" "1RKE" "4GAM" "4JCV" "4LW4")
-HOME=/home/mxy/lightdock_CPU_baseline/lightdockpy/bm/
-EXE=/home/mxy/lightdock_CPU_baseline/lightdock-rust-master
+HOME=$dock_base/lightdockpy/bm/
+EXE=$dock_base/lightdock-rust-master
 export LIGHTDOCK_DATA=${EXE}/data
 rm -rf ${HOME}measure_rust.txt
 for str in "${stringArray[@]}"; do
