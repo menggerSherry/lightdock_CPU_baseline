@@ -90,7 +90,7 @@ Cargo.lock
 
 .vscode/**
 *.repr
-bin/
+
 lib/
 build/
 tests/
